@@ -60,7 +60,8 @@ Use these functions from db.py in a Python script or admin panel:
 You can integrate Traccar GPS client to periodically send updates to this.
                                                                                  
 ---
-📅 Future Plans
+📅 Future Plans                                                                       
+
 ✨ Revamp Admin Page UI
 
 🔐 Enhanced Security (login, CSRF protection)
