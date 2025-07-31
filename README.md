@@ -54,10 +54,7 @@ on-Finder/
 
 🛠️ Admin Functions
 Use these functions from db.py in a Python script or admin panel:
-
-python                                                                                 
-Copy                                                                                 
-Edit                                                                                 
+                                                                                                                                                            
 add_bus(bus_no, route, departure, return_time)     # Add or update route info                                                                                 
 update_location(bus_no, longitude, latitude)       # Update location data                                                                                 
 You can integrate Traccar GPS client to periodically send updates to this.
