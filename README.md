@@ -15,17 +15,17 @@ A lightweight Python + Flask-based WhatsApp chatbot for tracking real-time bus l
 ---
 
 ## 📦 Folder Structure
-on-Finder/
-│── app.py
-│── db.py
-│── whatsapp.py
-│── config.py
-│── requirements.txt
-│── templates/
-│   ├── login.html
-│   ├── index.html
-│   ├── edit_bus.html
-│   ├── map.html
-│   └── style.css
-│── .env (create manually)
-│── buses.db (auto-created)
+on-Finder/                                                                                 
+│── app.py                                                                                 
+│── db.py                                                                                 
+│── whatsapp.py                                                                                 
+│── config.py                                                                                 
+│── requirements.txt                                                                                 
+│── templates/                                                                                 
+│   ├── login.html                                                                                 
+│   ├── index.html                                                                                 
+│   ├── edit_bus.html                                                                                 
+│   ├── map.html                                                                                 
+│   └── style.css                                                                                 
+│── .env (create manually)                                                                                 
+│── buses.db (auto-created)                                                                                 
