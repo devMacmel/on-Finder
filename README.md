@@ -92,3 +92,6 @@ Use Postman or webhook test messages to trigger the bot.
 Make sure your endpoint is accessible (e.g., via Render, Heroku, or ngrok).
 
 ---
+![Main Menu](assets/1.jpg)
+![Main Menu](assets/2.jpg)
+![Main Menu](assets/loc.jpg)
