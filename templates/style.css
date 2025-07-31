@@ -1,0 +1,7 @@
+body { font-family: Arial; margin: 20px; background: #f9f9f9; }
+h2 { color: #333; }
+table { border-collapse: collapse; width: 100%; background: #fff; }
+table th, table td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+.btn { background: #007bff; color: white; padding: 8px 12px; text-decoration: none; margin: 5px; display: inline-block; }
+.btn:hover { background: #0056b3; }
+form input { width: 100%; padding: 8px; margin: 5px 0; }

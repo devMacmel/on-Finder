@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>{% if bus %}Edit{% else %}Add{% endif %} Bus</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<h2>{% if bus %}Edit{% else %}Add{% endif %} Bus</h2>
+<form method="post">
+  <label>Bus Number:</label>
+  <input type="text" name="bus_no" value="{{ bus[0] if bus }}" {% if bus %}readonly{% endif %} required><br>
+  <label>Route:</label>
+  <input type="text" name="route" value="{{ bus[1] if bus }}" required><br>
+  <label>Departure:</label>
+  <input type="text" name="departure" value="{{ bus[2] if bus }}" required><br>
+  <label>Return Time:</label>
+  <input type="text" name="return_time" value="{{ bus[3] if bus }}" required><br>
+  <button type="submit" class="btn">Save</button>
+  <a href="/admin" class="btn">Cancel</a>
+</form>
+</body>
+</html>

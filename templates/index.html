@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Bus Routes - Admin</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<h2>🚌 Bus Routes - Admin Panel</h2>
+<a href="/admin/add" class="btn">+ Add New Bus</a>
+<a href="/admin/logout" class="btn">Logout</a>
+<table>
+<tr><th>Bus No</th><th>Route</th><th>Departure</th><th>Return</th><th>Actions</th></tr>
+{% for bus in buses %}
+<tr>
+<td>{{ bus[0] }}</td>
+<td>{{ bus[1] }}</td>
+<td>{{ bus[2] }}</td>
+<td>{{ bus[3] }}</td>
+<td>
+    <a href="/map?bus_no={{ bus[0] }}" target="_blank">🌍 View Map</a> |
+    <a href="/admin/edit/{{ bus[0] }}">✏ Edit</a> |
+    <a href="/admin/delete/{{ bus[0] }}" onclick="return confirm('Delete this bus?')">🗑 Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

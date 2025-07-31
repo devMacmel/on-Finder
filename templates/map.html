@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Bus Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <style>
+    html, body { height: 100%; margin: 0; font-family: Arial, sans-serif; }
+    #map { height: 80%; }
+    #info { padding: 10px; background: #f5f5f5; text-align: center; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <div id="info">
+    <h2>🚌 Bus: {{ bus_no }}</h2>
+    <p id="status">Loading location...</p>
+  </div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const busNo = "{{ bus_no }}";
+    let map, marker;
+
+    function initMap() {
+      map = L.map("map").setView([10.0, 76.0], 16);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "© OpenStreetMap"
+      }).addTo(map);
+
+      marker = L.marker([10.0, 76.0]).addTo(map);
+      fetchAndUpdate();
+      setInterval(fetchAndUpdate, 10000);
+    }
+
+    function fetchAndUpdate() {
+      fetch(`/api/bus-location?bus_no=${busNo}`)
+        .then(res => res.json())
+        .then(data => {
+          const statusEl = document.getElementById("status");
+          if (data.lat && data.lon) {
+            const pos = [data.lat, data.lon];
+            marker.setLatLng(pos);
+            map.setView(pos);
+            statusEl.textContent = `Last updated: ${data.updated}`;
+            statusEl.classList.remove("error");
+          } else {
+            statusEl.textContent = "⚠ No GPS data found for this bus";
+            statusEl.classList.add("error");
+          }
+        })
+        .catch(() => {
+          const statusEl = document.getElementById("status");
+          statusEl.textContent = "⚠ Error fetching data";
+          statusEl.classList.add("error");
+        });
+    }
+
+    initMap();
+  </script>
+</body>
+</html>
