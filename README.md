@@ -52,6 +52,27 @@ on-Finder/
 
 ---
 
+🛠️ Admin Functions
+Use these functions from db.py in a Python script or admin panel:
+
+python
+Copy
+Edit
+add_bus(bus_no, route, departure, return_time)     # Add or update route info
+update_location(bus_no, longitude, latitude)       # Update location data
+You can integrate Traccar GPS client to periodically send updates to this.
+
+---
+📅 Future Plans
+✨ Revamp Admin Page UI
+
+🔐 Enhanced Security (login, CSRF protection)
+
+⚡ Performance Optimizations (caching, DB indexing)
+
+📡 IoT Support for GPS modules on buses
+
+
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the repo
@@ -73,22 +94,3 @@ Use Postman or webhook test messages to trigger the bot.
 Make sure your endpoint is accessible (e.g., via Render, Heroku, or ngrok).
 
 ---
-🛠️ Admin Functions
-Use these functions from db.py in a Python script or admin panel:
-
-python
-Copy
-Edit
-add_bus(bus_no, route, departure, return_time)     # Add or update route info
-update_location(bus_no, longitude, latitude)       # Update location data
-You can integrate Traccar GPS client to periodically send updates to this.
-
----
-📅 Future Plans
-✨ Revamp Admin Page UI
-
-🔐 Enhanced Security (login, CSRF protection)
-
-⚡ Performance Optimizations (caching, DB indexing)
-
-📡 IoT Support for GPS modules on buses
